@@ -1,0 +1,811 @@
+/* ============================================
+   CAROLine Magazine — Design System
+   Revista Școlii Gimnaziale Principele Carol
+   Nr. 1 (2025) — „O Nouă Coroană"
+   ============================================ */
+
+/* Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Montserrat:ital,wght@0,400;0,500;0,600;0,700&family=Open+Sans:ital,wght@0,400;0,600;0,700;1,400&display=swap');
+
+/* ── CSS Variables (Brand Kit) ── */
+:root {
+  /* Paleta 1: Principale */
+  --navy-deep: #0A1E3D;
+  --navy-medium: #1A2B4A;
+  --gold-classic: #D4AF37;
+  --gold-warm: #C9A961;
+  --gold-light: #E0CA82;
+  /* Auriu deschis metalizat */
+
+  /* Paleta 2: Accentuare */
+  --yellow-highlight: #F4C430;
+  --white-pure: #FFFFFF;
+  --gray-light: #F5F5F5;
+  --near-black: #2C2C2C;
+
+  /* Derivate utile */
+  --gold-soft: rgba(212, 175, 55, 0.15);
+  --navy-overlay: rgba(10, 30, 61, 0.85);
+  --shadow-soft: 0 2px 12px rgba(10, 30, 61, 0.15);
+  --shadow-medium: 0 4px 20px rgba(10, 30, 61, 0.25);
+
+  /* Fonturi */
+  --font-heading: 'Cormorant Garamond', Georgia, serif;
+  --font-subheading: 'Montserrat', 'Segoe UI', sans-serif;
+  --font-body: 'Open Sans', Arial, sans-serif;
+
+  /* Pagina A4 */
+  --page-width: 210mm;
+  --page-height: 297mm;
+  --page-margin: 12mm;
+  --bleed: 3mm;
+}
+
+/* ── Reset & Base ── */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-size: 16px;
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font-body);
+  color: var(--near-black);
+  background: #e8e8e8;
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* ── Navigation Fixă ── */
+.page-nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  background: var(--navy-deep);
+  color: var(--white-pure);
+  padding: 8px 16px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  overflow-x: auto;
+  font-family: var(--font-subheading);
+  font-size: 11px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+}
+
+.page-nav .nav-title {
+  font-weight: 700;
+  color: var(--gold-classic);
+  white-space: nowrap;
+  font-size: 13px;
+  margin-right: 8px;
+  letter-spacing: 0.5px;
+}
+
+.page-nav a {
+  color: var(--white-pure);
+  text-decoration: none;
+  padding: 4px 10px;
+  border-radius: 4px;
+  white-space: nowrap;
+  transition: all 0.2s;
+  font-size: 11px;
+}
+
+.page-nav a:hover {
+  background: var(--gold-classic);
+  color: var(--navy-deep);
+}
+
+.page-nav a.nav-current {
+  background: var(--gold-warm);
+  color: var(--navy-deep);
+  font-weight: 600;
+}
+
+/* ── Pagina A4 ── */
+.page {
+  width: var(--page-width);
+  min-height: var(--page-height);
+  margin: 50px auto 30px;
+  background: var(--white-pure);
+  box-shadow: var(--shadow-medium);
+  position: relative;
+  overflow: hidden;
+  page-break-after: always;
+}
+
+.page:first-of-type {
+  margin-top: 70px;
+}
+
+.page-inner {
+  padding: var(--page-margin);
+  min-height: calc(var(--page-height) - 2 * var(--page-margin));
+  position: relative;
+}
+
+/* Număr pagină */
+.page-number {
+  position: absolute;
+  bottom: 8mm;
+  font-family: var(--font-subheading);
+  font-size: 10px;
+  color: var(--navy-medium);
+  font-weight: 600;
+}
+
+.page-number.left {
+  left: var(--page-margin);
+}
+
+.page-number.right {
+  right: var(--page-margin);
+}
+
+/* Bandă rubrică header — UNIFIED NAVY + GOLD */
+.rubric-header {
+  background: linear-gradient(135deg, var(--navy-deep), var(--navy-medium)) !important;
+  color: var(--white-pure);
+  padding: 5mm 8mm;
+  margin: calc(-1 * var(--page-margin)) calc(-1 * var(--page-margin)) 6mm;
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 4mm;
+}
+
+.rubric-header::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: linear-gradient(90deg, var(--gold-warm), var(--gold-light), var(--gold-warm));
+}
+
+/* Logo în header */
+.rubric-header .header-logo {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  border: 2px solid var(--gold-light);
+  object-fit: cover;
+  flex-shrink: 0;
+}
+
+/* Titlu centrat */
+.rubric-header .header-content {
+  flex: 1;
+}
+
+.rubric-header h2 {
+  font-family: var(--font-heading);
+  font-size: 22pt;
+  font-weight: 700;
+  letter-spacing: 1px;
+  color: var(--gold-light) !important;
+  margin-bottom: 2px;
+}
+
+.rubric-header .rubric-sub {
+  font-family: var(--font-subheading);
+  font-size: 9pt;
+  color: var(--gold-warm) !important;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+/* Nr. pagină în header */
+.rubric-header .header-page-num {
+  font-family: var(--font-heading);
+  font-size: 22pt;
+  font-weight: 700;
+  color: var(--gold-light);
+  flex-shrink: 0;
+  min-width: 24px;
+  text-align: right;
+}
+
+/* ── Tipografie ── */
+h1 {
+  font-family: var(--font-heading);
+  font-size: 28pt;
+  font-weight: 700;
+  color: var(--navy-deep);
+  line-height: 1.15;
+}
+
+h2 {
+  font-family: var(--font-heading);
+  font-size: 20pt;
+  font-weight: 700;
+  color: var(--navy-deep);
+  line-height: 1.2;
+}
+
+h3 {
+  font-family: var(--font-subheading);
+  font-size: 13pt;
+  font-weight: 600;
+  color: var(--navy-medium);
+  line-height: 1.3;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+p,
+.body-text {
+  font-family: var(--font-body);
+  font-size: 10.5pt;
+  line-height: 1.55;
+  color: var(--near-black);
+}
+
+.lead-text {
+  font-family: var(--font-body);
+  font-size: 12pt;
+  line-height: 1.5;
+  color: var(--navy-medium);
+  font-weight: 600;
+}
+
+/* Pull quote */
+.pull-quote {
+  border-left: 4px solid var(--gold-classic);
+  padding: 4mm 6mm;
+  margin: 4mm 0;
+  background: var(--gold-soft);
+  font-family: var(--font-heading);
+  font-size: 14pt;
+  font-style: italic;
+  color: var(--navy-deep);
+  line-height: 1.4;
+}
+
+/* Divider auriu */
+.gold-divider {
+  height: 2px;
+  background: linear-gradient(90deg, transparent, var(--gold-classic), transparent);
+  margin: 5mm 0;
+  border: none;
+}
+
+.gold-divider.thick {
+  height: 3px;
+  background: linear-gradient(90deg, transparent, var(--gold-classic), var(--yellow-highlight), var(--gold-classic), transparent);
+}
+
+/* Crown ornament (CSS) */
+.crown-ornament {
+  text-align: center;
+  color: var(--gold-classic);
+  font-size: 24px;
+  margin: 3mm 0;
+  letter-spacing: 8px;
+}
+
+/* ── PLACEHOLDER STYLES ── */
+
+/* Placeholder foto */
+.placeholder-photo {
+  background: linear-gradient(135deg, #FFF3D4, #FFE8A3);
+  border: 2px dashed var(--gold-classic);
+  border-radius: 4px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 15px;
+  position: relative;
+  min-height: 80px;
+}
+
+.placeholder-photo .ph-icon {
+  font-size: 32px;
+  margin-bottom: 6px;
+}
+
+.placeholder-photo .ph-label {
+  font-family: var(--font-subheading);
+  font-size: 9pt;
+  font-weight: 700;
+  color: #B8860B;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.placeholder-photo .ph-desc {
+  font-family: var(--font-body);
+  font-size: 8pt;
+  color: #96722B;
+  text-align: center;
+  margin-top: 4px;
+}
+
+.placeholder-photo .ph-specs {
+  font-family: var(--font-body);
+  font-size: 7pt;
+  color: #b08d40;
+  margin-top: 4px;
+  background: rgba(255, 255, 255, 0.6);
+  padding: 2px 8px;
+  border-radius: 3px;
+}
+
+/* Placeholder text */
+.placeholder-text {
+  background: linear-gradient(135deg, #E8F0FE, #D0E2FF);
+  border: 2px dashed #4A7DCA;
+  border-radius: 4px;
+  padding: 12px 15px;
+  position: relative;
+  min-height: 60px;
+}
+
+.placeholder-text .ph-icon {
+  font-size: 18px;
+  margin-bottom: 4px;
+}
+
+.placeholder-text .ph-label {
+  font-family: var(--font-subheading);
+  font-size: 9pt;
+  font-weight: 700;
+  color: #2B5EA7;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.placeholder-text .ph-desc {
+  font-family: var(--font-body);
+  font-size: 8.5pt;
+  color: #3B6DB5;
+  margin-top: 4px;
+  line-height: 1.4;
+}
+
+.placeholder-text .ph-specs {
+  font-family: var(--font-body);
+  font-size: 7.5pt;
+  color: #5B8AC7;
+  margin-top: 6px;
+  font-style: italic;
+}
+
+/* Placeholder ilustrație */
+.placeholder-illustration {
+  background: linear-gradient(135deg, #E0F5E8, #C2EAD5);
+  border: 2px dashed #4CAF50;
+  border-radius: 4px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 15px;
+  min-height: 80px;
+}
+
+.placeholder-illustration .ph-icon {
+  font-size: 32px;
+  margin-bottom: 6px;
+}
+
+.placeholder-illustration .ph-label {
+  font-family: var(--font-subheading);
+  font-size: 9pt;
+  font-weight: 700;
+  color: #2E7D32;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.placeholder-illustration .ph-desc {
+  font-family: var(--font-body);
+  font-size: 8pt;
+  color: #388E3C;
+  text-align: center;
+  margin-top: 4px;
+}
+
+/* ── LAYOUT HELPERS ── */
+.two-columns {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 5mm;
+}
+
+.three-columns {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 4mm;
+}
+
+.sidebar-layout {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 5mm;
+}
+
+.sidebar-layout.reversed {
+  grid-template-columns: 1fr 2fr;
+}
+
+.full-width {
+  margin: 0 calc(-1 * var(--page-margin));
+  padding: 0 var(--page-margin);
+}
+
+/* ── COPERTĂ (Pagina 1) ── */
+.page-cover {
+  background: linear-gradient(180deg, var(--navy-deep) 0%, var(--navy-medium) 60%, #2d4a7a 100%);
+  position: relative;
+}
+
+.page-cover .cover-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+/* ── CUPRINS (Pagina 2) ── */
+.toc-page {
+  background: var(--white-pure);
+}
+
+.toc-title {
+  font-family: var(--font-heading);
+  font-size: 32pt;
+  color: var(--navy-deep);
+  text-align: center;
+  margin-bottom: 3mm;
+  font-weight: 700;
+}
+
+.toc-subtitle {
+  text-align: center;
+  font-family: var(--font-subheading);
+  color: var(--gold-classic);
+  font-size: 10pt;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  margin-bottom: 6mm;
+}
+
+.toc-item {
+  display: grid;
+  grid-template-columns: 40px 1fr auto;
+  gap: 10px;
+  align-items: center;
+  padding: 3mm 0;
+  border-bottom: 1px solid #eee;
+  transition: background 0.2s;
+}
+
+.toc-item:hover {
+  background: var(--gold-soft);
+}
+
+.toc-item .toc-icon {
+  width: 36px;
+  height: 36px;
+  background: var(--navy-deep);
+  color: var(--gold-classic);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 14px;
+}
+
+.toc-item .toc-rubric {
+  font-family: var(--font-subheading);
+  font-size: 10pt;
+  font-weight: 600;
+  color: var(--navy-deep);
+}
+
+.toc-item .toc-desc {
+  font-family: var(--font-body);
+  font-size: 8pt;
+  color: #666;
+  margin-top: 1px;
+}
+
+.toc-item .toc-page-num {
+  font-family: var(--font-heading);
+  font-size: 20pt;
+  font-weight: 700;
+  color: var(--gold-classic);
+  min-width: 30px;
+  text-align: right;
+}
+
+/* ── EDITORIAL (Paginile 3-4) ── */
+.editorial-page {
+  background: var(--white-pure);
+}
+
+.editorial-signature {
+  margin-top: 5mm;
+  text-align: right;
+  font-family: var(--font-heading);
+  font-style: italic;
+  color: var(--navy-medium);
+  font-size: 11pt;
+}
+
+/* ── REPORTAJ (Paginile 5-6) ── */
+.reportaj-hero {
+  width: calc(100% + 2 * var(--page-margin));
+  margin-left: calc(-1 * var(--page-margin));
+  margin-top: calc(-1 * var(--page-margin));
+  height: 120mm;
+  position: relative;
+}
+
+.photo-grid {
+  display: grid;
+  gap: 3mm;
+}
+
+.photo-grid.grid-2x2 {
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+}
+
+.photo-grid.grid-3 {
+  grid-template-columns: 2fr 1fr;
+  grid-template-rows: 1fr 1fr;
+}
+
+.photo-grid.grid-3 .placeholder-photo:first-child {
+  grid-row: 1 / 3;
+}
+
+/* ── INTERVIU (Paginile 9-10) ── */
+.interview-q {
+  font-family: var(--font-subheading);
+  font-weight: 700;
+  color: var(--navy-deep);
+  font-size: 10.5pt;
+  margin-top: 4mm;
+  padding-left: 4mm;
+  border-left: 3px solid var(--gold-classic);
+}
+
+.interview-a {
+  font-family: var(--font-body);
+  color: var(--near-black);
+  font-size: 10pt;
+  margin-top: 2mm;
+  padding-left: 4mm;
+  line-height: 1.55;
+}
+
+/* ── PAGINA GRĂDINIȚELOR (Pagina 11) ── */
+.kindergarten-page {
+  background: linear-gradient(180deg, #FFF8E1 0%, #FFFDE7 50%, #FFF9C4 100%);
+}
+
+.kindergarten-page .page-inner {
+  text-align: center;
+}
+
+.kindergarten-title {
+  font-family: var(--font-heading);
+  font-size: 30pt;
+  color: var(--gold-classic);
+  margin-bottom: 3mm;
+}
+
+.kindergarten-subtitle {
+  font-family: var(--font-subheading);
+  font-size: 14pt;
+  color: var(--navy-medium);
+  font-weight: 600;
+}
+
+/* ── ACTIVITĂȚI / JOCURI (Paginile 21-22) ── */
+.games-page .game-box {
+  border: 2px solid var(--navy-medium);
+  border-radius: 8px;
+  padding: 5mm;
+  margin-bottom: 4mm;
+  background: var(--white-pure);
+}
+
+.game-box .game-title {
+  font-family: var(--font-subheading);
+  font-size: 12pt;
+  font-weight: 700;
+  color: var(--navy-deep);
+  margin-bottom: 3mm;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+/* ── COPERTA 4 (Pagina 24) ── */
+.page-backcover {
+  background: linear-gradient(180deg, var(--navy-deep), var(--navy-medium));
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: var(--white-pure);
+  min-height: var(--page-height);
+}
+
+.page-backcover .motto {
+  font-family: var(--font-heading);
+  font-size: 22pt;
+  font-style: italic;
+  color: var(--gold-classic);
+  margin-bottom: 8mm;
+  max-width: 150mm;
+  line-height: 1.3;
+}
+
+.page-backcover .school-name {
+  font-family: var(--font-subheading);
+  font-size: 10pt;
+  color: var(--gold-warm);
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  margin-top: 6mm;
+}
+
+/* ── Card layout ── */
+.card {
+  background: var(--white-pure);
+  border: 1px solid #e0e0e0;
+  border-radius: 6px;
+  overflow: hidden;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.08);
+}
+
+.card .card-body {
+  padding: 3mm;
+}
+
+.card .card-title {
+  font-family: var(--font-subheading);
+  font-size: 10pt;
+  font-weight: 700;
+  color: var(--navy-deep);
+  margin-bottom: 2mm;
+}
+
+/* ── Info Box ── */
+.info-box {
+  background: var(--gray-light);
+  border-left: 4px solid var(--gold-classic);
+  padding: 4mm 5mm;
+  margin: 3mm 0;
+  border-radius: 0 4px 4px 0;
+}
+
+.info-box .info-title {
+  font-family: var(--font-subheading);
+  font-size: 9pt;
+  font-weight: 700;
+  color: var(--navy-deep);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  margin-bottom: 2mm;
+}
+
+/* ── Segment badge ── */
+.segment-badge {
+  display: inline-block;
+  font-family: var(--font-subheading);
+  font-size: 7pt;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  padding: 2px 8px;
+  border-radius: 10px;
+  margin-bottom: 3mm;
+}
+
+.segment-badge.all {
+  background: var(--yellow-highlight);
+  color: var(--navy-deep);
+}
+
+.segment-badge.prescolar {
+  background: #FFE0B2;
+  color: #E65100;
+}
+
+.segment-badge.cls12 {
+  background: #C8E6C9;
+  color: #1B5E20;
+}
+
+.segment-badge.cls38 {
+  background: #BBDEFB;
+  color: #0D47A1;
+}
+
+.segment-badge.cls58 {
+  background: #D1C4E9;
+  color: #4A148C;
+}
+
+.segment-badge.adulti {
+  background: #F5F5F5;
+  color: #424242;
+}
+
+/* ── Checklist materiale ── */
+.materials-checklist {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background: var(--navy-deep);
+  color: var(--white-pure);
+  padding: 12px 18px;
+  border-radius: 8px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
+  font-family: var(--font-subheading);
+  font-size: 11px;
+  z-index: 999;
+  cursor: pointer;
+  transition: transform 0.2s;
+}
+
+.materials-checklist:hover {
+  transform: scale(1.05);
+}
+
+.materials-checklist .count {
+  color: var(--yellow-highlight);
+  font-weight: 700;
+  font-size: 16px;
+}
+
+/* ── Print media ── */
+@media print {
+  body {
+    background: white;
+  }
+
+  .page-nav,
+  .materials-checklist {
+    display: none;
+  }
+
+  .page {
+    box-shadow: none;
+    margin: 0;
+    page-break-after: always;
+  }
+}
+
+/* ── Responsive (ecran mic) ── */
+@media screen and (max-width: 800px) {
+  .page {
+    width: 100%;
+    min-height: auto;
+    margin: 40px 0 10px;
+  }
+}

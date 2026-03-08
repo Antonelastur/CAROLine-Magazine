@@ -1,0 +1,260 @@
+# Skills pentru Agent CAROLine - Revista Școlară
+
+## 1. PDF GENERATION & EXPORT
+
+### Când folosești acest skill:
+- Export final revistă (print sau digital)
+- Combinarea mai multor secțiuni în PDF
+- Optimizare pentru tipografie
+
+### Cum folosești:
+```
+PENTRU PRINT:
+- Format: PDF/X-1a sau PDF/X-4
+- Culori: CMYK
+- Rezoluție: 300 DPI minimum
+- Bleed: 3mm pe toate marginile
+- Fonts: embedded sau outlined
+
+PENTRU DIGITAL:
+- Format: PDF standard
+- Culori: RGB
+- Rezoluție: 150 DPI
+- Optimizare: fișier sub 20MB
+- Hyperlinks: active (dacă există)
+```
+
+### Comenzi tipice:
+- "Exportă revista ca PDF print-ready"
+- "Creează PDF digital optimizat pentru email"
+- "Combină secțiunile 1-3 într-un singur PDF"
+
+---
+
+## 2. CANVAS DESIGN - Creație Vizuală
+
+### Când folosești acest skill:
+- Design copertă revistă
+- Ilustrații decorative
+- Separatoare între rubrici
+- Backgrounds și texturi
+- Elemente grafice ornamentale
+
+### Paleta de culori OBLIGATORIE CAROLine:
+```
+Navy (fundal principal): #0A1E3D sau #1A2B4A
+Auriu (logo, titluri): #D4AF37 sau #C9A961
+Galben (accente): #F4C430
+Alb/Gri deschis: pentru text și spații
+
+NU FOLOSI: roșu, verde intens, violet, roz, portocaliu
+```
+
+### Stiluri vizuale:
+- Elegant + regal (coroană, ornamente aurii)
+- Modern (efecte de particule, dispersie digitală)
+- Profesional dar accesibil
+- Combinație tradiție + inovație
+
+### Comenzi tipice:
+- "Creează copertă pentru CAROLine Nr. 2 cu tema 'Primăvara'"
+- "Design separator vizual pentru rubrica 'Sub Reflector'"
+- "Ilustrație decorativă pentru pagina de cuprins"
+
+### NU folosești pentru:
+❌ Layout pagini interioare (folosește Canva pentru asta)
+❌ Fotografii reale de oameni
+❌ Modificarea logo-urilor existente
+
+---
+
+## 3. THEME FACTORY - Consistență Vizuală
+
+### Când folosești acest skill:
+- Aplicarea temei CAROLine pe toate paginile
+- Crearea template-urilor pentru rubrici
+- Menținerea consistenței între numere diferite
+- Stilizarea elementelor recurente
+
+### Tema CAROLine - Setări:
+```
+PRIMARY COLOR: #0A1E3D (Navy) - fundal principal
+SECONDARY COLOR: #D4AF37 (Gold) - logo, titluri principale
+ACCENT COLOR: #F4C430 (Yellow) - highlights, benzi rubrici
+
+TYPOGRAPHY:
+- Titluri principale: Serif decorativ/ornamental
+- Titluri secundare: Sans-serif bold, clean
+- Text body: Sans-serif lizibil, 10-12pt
+- Line height: minimum 1.3
+
+SPACING:
+- Marje: minimum 15mm
+- Spațiu între elemente: minimum 5mm
+- White space: generos, nu înghesui
+```
+
+### Comenzi tipice:
+- "Aplică tema CAROLine pe acest template"
+- "Verifică consistența culorilor în toate paginile"
+- "Creează template pentru rubrica 'Zoom pe clasă'"
+
+---
+
+## 4. DOCUMENT PROCESSING (DOCX)
+
+### Când folosești acest skill:
+- Primești articole de la elevi/profesori în format Word
+- Trebuie să extragi și organizezi conținut
+- Procesezi interviuri sau texte lungi
+- Convertești format Word în layout revistă
+
+### Cum procesezi:
+1. Citește documentul .docx
+2. Extrage text păstrând formatarea relevantă
+3. Identifică structura (titluri, paragrafe, liste)
+4. Pregătește pentru machetare
+
+### Comenzi tipice:
+- "Extrage textul din interviu_profesor.docx"
+- "Organizează cele 5 articole Word pentru layoutul revistei"
+- "Citește poeziile din Laboratorul_Imaginatie.docx"
+
+---
+
+## 5. WEB DESIGN (Opțional - pentru versiune digitală)
+
+### Când folosești acest skill:
+- Creezi versiune web interactivă a revistei
+- Faci landing page pentru arhivă numere
+- Dezvolți flipbook digital
+- Creezi preview interactiv
+
+### Tehnologii:
+- HTML + CSS + JavaScript
+- React pentru interactivitate
+- Responsive design (mobil + desktop)
+
+### NU folosești dacă:
+- Ai nevoie doar de PDF static
+- Nu există cerință pentru versiune web
+
+---
+
+## WORKFLOW GENERAL CU SKILLS
+
+### Pentru fiecare număr al revistei:
+
+**FAZA 1 - PREGĂTIRE CONȚINUT:**
+```
+1. Primești materiale (texte Word, fotografii, interviuri)
+2. Skill DOCX → Procesezi și extragi conținut
+3. Organizezi pe rubrici
+```
+
+**FAZA 2 - DESIGN VIZUAL:**
+```
+4. Skill CANVAS-DESIGN → Creezi copertă + ilustrații
+5. Skill THEME-FACTORY → Aplici tema CAROLine
+6. Layout în Canva/InDesign → Machetare pagini
+7. Skill THEME-FACTORY → Verifici consistența
+```
+
+**FAZA 3 - EXPORT:**
+```
+8. Skill PDF → Export print (CMYK, 300 DPI)
+9. Skill PDF → Export digital (RGB, 150 DPI)
+10. Review final și aprobare
+```
+
+---
+
+## REGULI IMPORTANTE
+
+### ÎNTOTDEAUNA:
+✅ Verifică paleta de culori înainte de design
+✅ Cere aprobare pentru modificări majore
+✅ Salvează versiuni (v1, v2, v3, FINAL)
+✅ Rulează checklist tehnic înainte de export
+
+### NICIODATĂ:
+❌ Nu schimba culorile fără aprobare
+❌ Nu inventa conținut editorial
+❌ Nu folosi stock photos pentru evenimente reale
+❌ Nu exporta fără verificare finală
+
+---
+
+## EXEMPLE DE COMENZI COMPLETE
+
+**Exemplu 1 - Creare copertă:**
+```
+"Folosind CANVAS-DESIGN skill:
+Creează copertă pentru CAROLine Nr. 2 (2025)
+- Tema: 'Primăvara la Principele Carol'
+- Paletă: navy + auriu + galben
+- Include: logo CAROLine cu coroană, logo școală, număr, cuprins vizual
+- Stil: elegant + fresh, element primăvară subtil
+- Dimensiune: A4 portrait
+- Pentru review, nu export final"
+```
+
+**Exemplu 2 - Export PDF:**
+```
+"Folosind PDF skill:
+Exportă revista CAROLine Nr. 1 complet (24 pagini)
+- Format PRINT: CMYK, 300 DPI, bleed 3mm, PDF/X-1a
+- Format DIGITAL: RGB, 150 DPI, optimizat sub 15MB
+- Verifică: fonts embedded, toate paginile incluse
+- Nume fișiere: CAROLine_Nr1_2025_PRINT.pdf și CAROLine_Nr1_2025_DIGITAL.pdf"
+```
+
+**Exemplu 3 - Procesare conținut:**
+```
+"Folosind DOCX skill:
+Citește articolele din folderul 'Contributii_Ianuarie':
+1. interviu_director.docx
+2. poezii_clasa_a5a.docx
+3. reportaj_voroneț.docx
+
+Extrage textul și organizează astfel:
+- Interviu → pentru rubrica 'Sub Reflector'
+- Poezii → pentru rubrica 'Laboratorul de Imaginație'
+- Reportaj → pentru rubrica 'Hoinar prin Țara Fagilor'
+
+Păstrează formatarea și verifică lungimea textelor."
+```
+
+---
+
+## TESTARE SKILLS
+
+După ce salvezi acest fișier, testează fiecare skill:
+
+**Test 1 - Canvas Design:**
+"Creează o ilustrație de test pentru separator de rubrică folosind paleta CAROLine"
+
+**Test 2 - PDF:**
+"Creează un PDF de test cu 2 pagini: titlu + text demonstrativ, export pentru digital"
+
+**Test 3 - Theme Factory:**
+"Verifică dacă culorile #0A1E3D, #D4AF37, #F4C430 sunt corect aplicate"
+
+---
+
+**SALVEAZĂ ACEST FIȘIER ȘI TESTEAZĂ!**
+```
+
+### Pasul 3: Salvează fișierul
+
+Click pe "Save" sau "Apply" în Antigravity.
+
+### Pasul 4: Testează configurarea
+
+Deschide chat-ul cu agentul și scrie:
+```
+"Am configurat skillurile. Te rog testează:
+
+1. Canvas Design skill - Creează o ilustrație mică de test cu paleta CAROLine (navy + auriu + galben)
+
+2. Confirmă că înțelegi când să folosești fiecare skill"
