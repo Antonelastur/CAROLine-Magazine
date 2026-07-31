@@ -14,7 +14,7 @@ NU folosi: roșu, verde intens, violet, roz sau alte culori străine de paletă
 Logo și Branding
 
 Logo "CAROLine" cu coroană APARE OBLIGATORIU pe: copertă, cuprins, contracopertă
-Logo circular al școlii APARE pe: copertă, pagina editorială
+Logo circular al școlii APARE pe: copertă, heatherul paginilor
 NU modifica, NU recolorezi, NU distorsionezi logo-urile
 NU crea logo-uri alternative
 
@@ -40,7 +40,6 @@ CONFIRMĂ deadline: "Când trebuie finalizat? Print, digital sau ambele?"
 
 În timpul designului:
 
-NU începe machetarea fără să ai TOATE textele finale
 NU folosi placeholder text (Lorem Ipsum) - doar dacă e marcat clar ca DRAFT
 SALVEAZĂ versiuni după fiecare rundă de feedback: v1, v2, v3, FINAL
 ÎNTREABĂ când ceva e ambiguu, NU improviza
