@@ -89,6 +89,14 @@ Ordinea naturală a privirii pe o pagină (pattern Z / Gutenberg):
 - Aliniat la marginea stângă a imaginii.
 - Font italic, 7–8pt, cu `var(--navy-medium)` sau gri.
 
+### Aliniere bloc text + fotografie
+Când text și foto sunt alăturate (coloană dedicată sau grid asimetric), ultima
+linie a textului trebuie să se alinieze aproximativ cu marginea de jos a
+fotografiei — nu lăsa fotografia sau textul să se termine mult mai sus/jos
+decât celălalt, creează aspect dezechilibrat. Ajustează dimensiunea foto sau
+spațierea textului (line-height, padding) pentru a obține alinierea, nu
+trunchia conținutul.
+
 ---
 
 ## 4. Umplerea paginii — eliminarea spațiului gol (REGULA CRITICĂ)
