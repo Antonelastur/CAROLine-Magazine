@@ -37,13 +37,30 @@ Dacă apare confuzie despre care folder e activ pe viitor (ex. dacă
 `clean_revista/` începe să fie modificat direct), oprește-te și întreabă
 înainte de a presupune.
 
-## Flux de lucru curent (generare revistă)
+## Flux de lucru curent (machetare manuala pagina cu pagina)
 
-`build_html.py` (generează blocurile HTML per pagină din texte sursă) →
-`build_magazine_28.py` (asamblare intermediară, 28 pagini) →
-`build_magazine_32.py` (asamblare finală, 32 pagini — ultimul rulat, reflectă
-starea curentă a `revista/index.html`). Orice extindere/reparare a machetei
-continuă din `build_magazine_32.py`, nu din scripturile din martie.
+Machetarea se face manual, pagina cu pagina, direct in `revista/index.html` +
+`revista/styles.css`. Scripturile `build_*.py` sunt invechite.
+
+### Reguli tehnice NON-NEGOCIABILE
+
+1. **Dupa ORICE edit HTML cu tool-ul Edit, ruleaza fixer-ul Python de ghilimele:**
+   Edit tool pe Windows converteste `"` (U+0022) in smart quotes U+201D in
+   atribute HTML, ceea ce sparge selectori CSS si atribute.
+   ```
+   python -c "import re; f=open(r'revista/index.html','r',encoding='utf-8'); t=f.read(); f.close(); t2=re.sub(r'(?<=\=)\u201d([^\u201d]*)\u201d',r'\"\\1\"',t); f=open(r'revista/index.html','w',encoding='utf-8'); f.write(t2); f.close(); print('Fixed' if t!=t2 else 'Clean')"
+   ```
+
+2. **Screenshot obligatoriu după orice modificare de layout/titlu.**
+   Folosește Playwright/browser tool pentru captură, verifică vizual
+   (încadrare titlu, aliniere, spațiu gol) ÎNAINTE de a raporta
+   "gata". Nu declara o pagină terminată fără confirmare vizuală proprie."
+
+3. **Server preview:** `python -m http.server 8091 --directory revista`
+   (portul 8091). launch.json (portul 8090) NU functioneaza corect.
+
+4. **object-fit: cover este INTERZIS** pe fotografii — trunchiaza imaginile.
+   Foloseste `object-fit: contain` sau `width: X%; height: auto`.
 
 ## Reguli de economie tokeni
 
@@ -89,14 +106,7 @@ autentificare — nu presupune că sunt utilizabili fără să verifici cu `clau
 
 ## Identitate vizuală — NON-NEGOCIABIL
 
-**Culori (strict, nimic altceva):**
-| Rol | Culoare |
-|---|---|
-| Fundal principal | Navy `#0A1E3D` / `#1A2B4A` |
-| Logo, titluri principale | Auriu `#D4AF37` / `#C9A961` |
-| Highlights, benzi rubrici | Galben `#F4C430` |
-
-Interzis: roșu, verde intens, violet, roz sau orice culoare în afara paletei.
+**Culori:** definite ca variabile CSS în `revista/styles.css` (`:root`) — folosește-le mereu prin `var(...)`, nu hexuri hardcodate noi. Interzis: roșu, verde intens, violet, roz sau orice culoare în afara paletei.
 
 **Logo:** „CAROLine" cu coroană → obligatoriu pe copertă, cuprins,
 contracopertă. Logo circular al școlii → copertă + header pagini. Nu se
@@ -164,50 +174,7 @@ formatul de export cerut (print/digital/ambele).
 Când ceva e ambiguu → întreabă, nu presupune. Când apare o problemă →
 raportează și propune opțiuni concrete, nu decide singur.
 
-**Formulări corecte (exemple):**
-- ✅ "Ar trebui să includ logo-ul pe această pagină? Obișnuit apare doar pe copertă."
-- ✅ "Fotografia e prea mică pentru spațiu. Pot fie să o micșorez cadrul, fie să folosesc alta."
-- ✅ "Am observat că textul interviului e foarte lung. Îl împart pe 2 pagini sau reducem numărul de întrebări?"
-
-**Formulări greșite (de evitat):**
-- ❌ "Am pus logo-ul și aici pentru că arată mai bine."
-- ❌ "Nu se poate, fotografia e prea mică."
-- ❌ "Am tăiat ultimele 2 întrebări că nu încăpeau."
-
-## Cazuri speciale
-
-**Dacă lipsesc materiale:**
-> „Lipsesc fotografiile pentru pagina 7 (Carolist de Nota 10). Pot fie:
-> (A) Las spațiu gol marcat [PLACEHOLDER - FOTO]
-> (B) Folosesc ilustrații decorative temporare
-> (C) Aștept fotografiile și continui cu alte pagini
-> Ce preferi?"
-
-**Dacă conținutul e prea mult:**
-> „Textul pentru 'Sub Reflector' are 2500 cuvinte, dar spațiul permite doar
-> 1200. Soluții:
-> (A) Împart pe 2 pagini (pagina 8-9)
-> (B) Scad fontul de la 11pt la 10pt
-> (C) Editorul prescurtează textul
-> Ce alegeți?"
-
-**Dacă calitatea e proastă:**
-> „Fotografia pentru copertă are 640x480px, dar pentru print de calitate
-> trebuie 3000x2400px. Nu pot folosi această imagine. Aveți altă fotografie
-> sau facem o sesiune foto nouă?"
-
-**Dacă feedback-ul e contradictoriu:**
-> „Am primit:
-> De la editor: 'Pune logo-ul mai mare'
-> De la director: 'Logo-ul e prea mare'
-> Pot organiza o întâlnire scurtă să aliniați viziunea sau fac 2 variante
-> pentru vot?"
-
-## Skill-uri disponibile (`.claude/skills/`)
-
-- `pagina-noua` — generare pagină nouă în revistă dintr-un docx sursă.
-- `export-canva` — export/import machetă în Canva.
-- `curatare-scratch` — curățare fișiere scratch vechi.
+Exemple de formulări corecte/greșite și scripturi pentru cazuri excepționale (materiale lipsă, conținut prea mult, calitate proastă, feedback contradictoriu) → `.claude/skills/gestionare-exceptii/SKILL.md`.
 
 ## Notă despre `.agents/rules/Skills`
 
