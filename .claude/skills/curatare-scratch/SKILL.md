@@ -1,4 +1,7 @@
-# Skill: curatare-scratch
+---
+name: curatare-scratch
+description: Curățare fișiere scratch și scripturi vechi identificate în auditul proiectului CAROLine. Folosește acest skill când se cere curățenie de fișiere temporare/vechi, niciodată ștergere automată fără listă și confirmare.
+---
 
 Curățare fișiere scratch/vechi identificate în audit.
 

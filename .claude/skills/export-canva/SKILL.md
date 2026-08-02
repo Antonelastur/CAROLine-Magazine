@@ -1,4 +1,7 @@
-# Skill: export-canva
+---
+name: export-canva
+description: Export/import machetă între revista/index.html și Canva prin revista_canva_import.html, inclusiv checklist de export PDF final. Folosește acest skill pentru sincronizare cu Canva sau export print/digital.
+---
 
 Export/import machetă în Canva.
 
