@@ -1,0 +1,82 @@
+CONȚINUT MUTAT DE PE PAGINA 4 (restructurare din 2026-08-02)
+Nu s-a șters — se relochează pe pagini viitoare, care încă nu există.
+
+============================================================
+1) DESTINAȚIE: pagina viitoare "Istoricul clădirii"
+   (bloc despre Școala Pedagogică de Fete, perioada postbelică)
+   — SURSĂ: text verbatim din pag4_text.txt (aprobat de utilizatoare),
+   NU apare în Conținuturi/pagina 4.docx.
+============================================================
+
+În 1944, când Bucovina de Nord (cu Cernăuțiul) a intrat definitiv în componența
+Rusiei, Școala Normală de Fete „Maria Voichița" din Cernăuți a fost mutată aici,
+la Gura Humorului, în aceeași clădire unde fusese Liceul „Principele Carol".
+Carol I înțelegea ceva fundamental: „O școală fără profesori buni este o
+clădire goală". De aceea, încă din 1871, a înființat Școli Normale - instituții
+care pregăteau profesori. Ce este o Școală Normală? Un liceu special unde
+tinerii (mai ales tinere, în cazul celor pentru învățământul primar) învățau
+cum să le predea copiilor. Ieșeau de acolo pregătiți să meargă în sate și
+orașe să-i învețe pe alții. Un an mai târziu, se înființa „Școala Pedagogică
+de Fete". Timp de 15 ani, în această clădire nu au învățat doar elevi, ci și
+viitoare învățătoare. Fete tinere veneau aici să învețe pedagogie, psihologie,
+metodică, practicau alături de profesorii care îi învățau pe copiii din
+aceeași clădire, apoi plecau în satele Bucovinei să predea la rândul lor.
+
+============================================================
+2) DESTINAȚIE: pagina viitoare despre copilăria Principelui Carol
+   (bloc despre Regele Carol I supraveghind educația nepotului)
+============================================================
+
+⚠️ ATENȚIE — TEXTUL DE MAI JOS NU E VERBATIM DIN NICIO SURSĂ.
+A fost scris/elaborat de asistent într-o sesiune anterioară (dinainte de
+pag4_text.txt), nu apare nici în Conținuturi/pagina 4.docx, nici în
+Conținuturi/Cine a fost Principele Carol.docx. Reconfirmat de utilizatoare
+la restructurarea din 2026-08-02 ca variantă temporară, DAR nu trebuie
+folosit ca text final fără verificare/rescriere de către editor.
+
+Text (elaborat, NEVERIFICAT ca sursă):
+"Regele Carol I, un om al ordinii, al muncii asidue și al unui simț al
+datoriei ieșit din comun, a văzut în educație instrumentul prin care un
+popor și un urmaș la tron se pot ridica la înălțimea destinului lor. Convins
+că formarea unui viitor conducător nu poate fi lăsată la voia întâmplării,
+s-a implicat direct în creșterea nepotului său, Principele Carol,
+supraveghindu-i îndeaproape studiile și disciplina zilnică, uneori chiar
+peste dorința părinților acestuia. Rigoarea, cumpătarea și respectul față de
+datorie erau lecțiile pe care voia să le lase, mai presus de coroană,
+generațiilor următoare."
+
+SURSA REALĂ, autentică — Conținuturi/Cine a fost Principele Carol.docx,
+paragraful 4 (fapt mult mai simplu, ton potrivit pentru elevi):
+"Bunicul lui, Regele Carol I, a avut mare grijă de educația micuțului
+prinț. Uneori, chiar și-a spus părerea, chiar dacă părinții lui Carol,
+Ferdinand și Maria, aveau alte idei despre cum să-l crească."
+
+RECOMANDARE: la construirea paginii viitoare, pornește de la fraza scurtă
+de mai sus (sursă reală) și extinde din Cine a fost Principele Carol.docx
+în întregime (conține și povestea nașterii, pasiunile copilăriei,
+bacalaureatul la Peleș, călătoria în jurul lumii) — nu de la paragraful
+elaborat de asistent.
+
+============================================================
+3) DESTINAȚIE: pagină viitoare (ex. Timeline, sau pagină dedicată
+   faptelor istorice) — casetă "5 FAPTE DESPRE LICEUL DIN 1921"
+   — SURSĂ: verbatim din Conținuturi/pagina 4.docx, paragrafele 19-24.
+============================================================
+
+1. Prima școală românească din oraș. Până în 1920, predarea era doar în
+   germană. Românii erau minoritate în propriul oraș!
+2. Directorul a fost prof. Emanuil Antonovici. Preda matematica și fizica.
+   Corpul didactic avea 16 profesori.
+3. Creștere rapidă. De la 47 elevi (1920) la 408 elevi (1928) - în doar 8 ani!
+4. Bibliotecă impresionantă. În 1928, biblioteca avea 1.179 volume - o avere
+   pentru acele timpuri!
+5. A supraviețuit războaielor. Clădirea a fost spital militar o perioadă, dar
+   liceul și-a continuat, apoi, misiunea de educare.
+
+============================================================
+ELIMINAT COMPLET (nu se mută nicăieri, la cererea explicită)
+============================================================
+
+"Și povestea continuă. Poate că într-o zi vei fi și tu profesorul care va sta
+în fața unei clase, tot în această clădire, continuând povestea." (tranziție
+italică, eliminată din P4).

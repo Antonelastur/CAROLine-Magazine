@@ -5,17 +5,27 @@
    ============================================ */
 
 /* Google Fonts */
-@import url('https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400&family=Open+Sans:wght@300;400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700;800;900&family=EB+Garamond:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400;1,500;1,600;1,700;1,800&family=Merriweather:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400&family=Open+Sans:wght@300;400;500;600;700&display=swap');
 
 /* ── CSS Variables (Brand Kit) ── */
 :root {
-  /* Paleta 1: Principale */
-  --navy-deep: #0A1E3D;
+  /* Paleta 1: Principale — aliniată la măsurătorile din designul Canva „CAROLine" */
+  --navy-deep: #122849;
   --navy-medium: #1A2B4A;
   --gold-classic: #D4AF37;
   --gold-warm: #C9A961;
   --gold-light: #E0CA82;
   /* Auriu deschis metalizat */
+
+  /* Auriu pal „șampanie" — text/titluri pe fundal navy, exact ca în Canva */
+  --gold-canva: #D6C3A1;
+  --gold-canva-num: #CBC2AD;
+  /* Accent nou, absent înainte — bară lângă citate */
+  --coral-accent: #F47E57;
+  /* Crem cald pt. casete-citat (înlocuiește gri neutru) */
+  --cream-quote: #FDF8F0;
+  /* Linie subțire sub bara de header */
+  --header-underline: #9AA4B2;
 
   /* Paleta 2: Accentuare */
   --yellow-highlight: #F4C430;
@@ -29,10 +39,10 @@
   --shadow-soft: 0 2px 12px rgba(10, 30, 61, 0.15);
   --shadow-medium: 0 4px 20px rgba(10, 30, 61, 0.25);
 
-  /* Fonturi oficiale din Site-ul Școlii */
-  --font-heading: 'Merriweather', Georgia, serif;
-  --font-subheading: 'Open Sans', 'Segoe UI', sans-serif;
-  --font-body: 'Open Sans', Arial, sans-serif;
+  /* Fonturi — Cinzel pt. titluri, EB Garamond pt. subtitluri și corp de text */
+  --font-heading: 'Cinzel', Georgia, serif;
+  --font-subheading: 'EB Garamond', Georgia, serif;
+  --font-body: 'EB Garamond', Georgia, serif;
 
   /* Pagina A4 */
   --page-width: 210mm;
@@ -130,7 +140,7 @@ body {
 
 .page-inner {
   padding: var(--page-margin);
-  min-height: calc(var(--page-height) - 2 * var(--page-margin));
+  min-height: var(--page-height);
   position: relative;
 }
 
@@ -152,11 +162,60 @@ body {
   right: var(--page-margin);
 }
 
-/* Bandă rubrică header — UNIFIED NAVY + GOLD */
+/* Page Footer — bandă navy plată, doar text centrat, ca în Canva (fără nr. pagină repetat) */
+.page-footer {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: var(--navy-deep);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 3mm 0;
+  font-family: var(--font-heading);
+  font-size: 9pt;
+  color: var(--gold-canva);
+  font-weight: 600;
+  text-transform: none;
+  letter-spacing: 1px;
+}
+
+/* Linie de demarcație deasupra footerului — oglinda liniei de sub header, edge-to-edge */
+.page-footer::before {
+  content: '';
+  position: absolute;
+  top: -2.1mm;
+  left: 0;
+  right: 0;
+  height: 0.5mm;
+  background: var(--header-underline);
+}
+
+.page-footer::after {
+  content: '';
+  position: absolute;
+  top: -1.6mm;
+  left: 0;
+  right: 0;
+  height: 1.6mm;
+  background: var(--gold-canva);
+}
+
+.page-footer .footer-text {
+  color: var(--gold-canva);
+}
+
+.page-footer .footer-page-num {
+  /* Ascuns — numărul de pagină apare deja, mare, în header (.header-page-num) */
+  display: none;
+}
+
+/* Bandă rubrică header — navy PLAT, ca în Canva (fără degrade) */
 .rubric-header {
-  background: linear-gradient(135deg, var(--navy-deep), var(--navy-medium)) !important;
+  background: var(--navy-deep) !important;
   color: var(--white-pure);
-  padding: 5mm 8mm;
+  padding: 6mm 8mm;
   margin: calc(-1 * var(--page-margin)) calc(-1 * var(--page-margin)) 6mm;
   position: relative;
   display: flex;
@@ -164,33 +223,46 @@ body {
   gap: 4mm;
 }
 
+/* Bară plată sub header + linie subțire dedesubt, ca în Canva (nu degrade) */
 .rubric-header::after {
   content: '';
   position: absolute;
-  bottom: 0;
+  bottom: -1.6mm;
   left: 0;
   right: 0;
-  height: 3px;
-  background: linear-gradient(90deg, var(--gold-warm), var(--gold-light), var(--gold-warm));
+  height: 1.6mm;
+  background: var(--gold-canva);
 }
 
-/* Logo în header */
+.rubric-header::before {
+  content: '';
+  position: absolute;
+  bottom: -2.1mm;
+  left: 0;
+  right: 0;
+  height: 0.5mm;
+  background: var(--header-underline);
+  z-index: 1;
+}
+
+/* Logo în header — mărit, aliniat direct lângă titlu */
 .rubric-header .header-logo {
-  width: 65px;
-  height: 65px;
+  width: 20mm;
+  height: 20mm;
   border-radius: 50%;
   border: none;
-  /* Elimina cercul din jurul logo-ului */
-  object-fit: contain;
-  /* Ajustat ca sa arate tot conturul transparent corect */
+  background-image: url("Imagini/Logo.jpeg");
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
   flex-shrink: 0;
 }
 
-/* Titlu centrat */
+/* Titlu aliniat la stânga, chiar lângă logo */
 .rubric-header .header-content {
   flex: 1;
   overflow: hidden;
-  /* Necesrar pentru truncare */
+  text-align: left;
 }
 
 .rubric-header h2 {
@@ -198,10 +270,11 @@ body {
   font-size: 20pt;
   /* Putoina micsorat pentru a incapea pe un rand */
   font-weight: 700;
+  font-variant: small-caps;
   letter-spacing: 1px;
-  color: #C8A97E !important;
-  /* Culoare cafea cu lapte */
+  color: var(--gold-canva) !important;
   margin-bottom: 2px;
+  text-align: left;
   white-space: nowrap;
   /* Tine textul pe o singura linie */
   overflow: hidden;
@@ -210,22 +283,24 @@ body {
 }
 
 .rubric-header .rubric-sub {
-  font-family: var(--font-subheading);
-  font-size: 9pt;
-  color: var(--gold-warm) !important;
-  text-transform: uppercase;
-  letter-spacing: 2px;
+  font-family: var(--font-body);
+  font-style: italic;
+  font-size: 20pt;
+  color: var(--gold-canva) !important;
+  text-transform: none;
+  letter-spacing: 0.5px;
+  text-align: left;
 }
 
-/* Nr. pagină în header */
+/* Nr. pagină în header — mărit la echivalentul Canva (~58pt, măsurat din export PNG) */
 .rubric-header .header-page-num {
   font-family: var(--font-heading);
-  font-size: 22pt;
+  font-size: 58pt;
   font-weight: 700;
-  /* Bold */
-  color: var(--gold-classic);
+  color: var(--gold-canva-num);
   flex-shrink: 0;
   min-width: 24px;
+  line-height: 1;
   text-align: right;
 }
 
@@ -248,7 +323,7 @@ h2 {
 
 h3 {
   font-family: var(--font-subheading);
-  font-size: 13pt;
+  font-size: 20pt !important;
   font-weight: 600;
   color: var(--navy-medium);
   line-height: 1.3;
@@ -272,17 +347,42 @@ p,
   font-weight: 600;
 }
 
-/* Pull quote */
+/* Pull quote — casetă crem cu bară accent corai + iconiță ghilimele în cerc navy, ca în Canva */
 .pull-quote {
-  border-left: 4px solid var(--gold-classic);
-  padding: 4mm 6mm;
+  position: relative;
+  border-left: 3px solid var(--coral-accent);
+  padding: 5mm 6mm 5mm 14mm;
   margin: 4mm 0;
-  background: var(--gold-soft);
+  background: var(--cream-quote);
   font-family: var(--font-heading);
-  font-size: 14pt;
+  font-size: 13pt;
   font-style: italic;
+  font-weight: 700;
   color: var(--navy-deep);
   line-height: 1.4;
+}
+
+/* Iconiță ghilimele — cerc navy plin, poziționat peste marginea din stânga a casetei */
+.quote-icon-circle,
+.pull-quote::before {
+  content: '\201D';
+  position: absolute;
+  left: -3.5mm;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 9mm;
+  height: 9mm;
+  border-radius: 50%;
+  background: var(--navy-deep);
+  color: var(--cream-quote);
+  font-family: Georgia, serif;
+  font-size: 20pt;
+  font-style: normal;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  line-height: 1;
 }
 
 /* Divider auriu */
@@ -433,6 +533,40 @@ p,
   margin-top: 4px;
 }
 
+/* ── FOTO REALĂ (nu placeholder) — chenar auriu simplu + legendă italică, ca în Canva ── */
+.framed-photo {
+  border: 2px solid var(--gold-classic);
+  border-radius: 2px;
+  padding: 2mm;
+  background: var(--white-pure);
+  display: inline-block;
+}
+
+.framed-photo img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.framed-photo .photo-caption {
+  font-family: var(--font-heading);
+  font-style: italic;
+  font-size: 8.5pt;
+  color: var(--navy-medium);
+  text-align: center;
+  margin-top: 2mm;
+}
+
+/* ── Diamant auriu — marcator pe timeline, ca în Canva ── */
+.timeline-diamond {
+  display: inline-block;
+  width: 3mm;
+  height: 3mm;
+  background: var(--gold-classic);
+  border: 1px solid var(--navy-deep);
+  transform: rotate(45deg);
+}
+
 /* ── LAYOUT HELPERS ── */
 .two-columns {
   display: grid;
@@ -482,86 +616,176 @@ p,
   background: var(--white-pure);
 }
 
-.toc-title {
-  font-family: var(--font-heading);
-  font-size: 32pt;
-  color: var(--navy-deep);
-  text-align: center;
-  margin-bottom: 3mm;
-  font-weight: 700;
-}
-
-.toc-subtitle {
-  text-align: center;
-  font-family: var(--font-subheading);
-  color: var(--gold-classic);
-  font-size: 10pt;
-  text-transform: uppercase;
-  letter-spacing: 3px;
-  margin-bottom: 6mm;
-}
-
-.toc-item {
+.toc-page .toc-grid {
   display: grid;
-  grid-template-columns: 40px 1fr auto;
-  gap: 10px;
-  align-items: center;
-  padding: 3mm 0;
-  border-bottom: 1px solid #eee;
-  transition: background 0.2s;
+  grid-template-columns: 1fr 1fr;
+  column-gap: 10mm;
+  margin-top: 6mm;
 }
 
-.toc-item:hover {
-  background: var(--gold-soft);
+.toc-page .toc-crown {
+  text-align: center;
+  margin: 5mm 0 3mm;
 }
 
-.toc-item .toc-icon {
-  width: 36px;
-  height: 36px;
-  background: var(--navy-deep);
-  color: var(--gold-classic);
-  border-radius: 50%;
+.toc-page .toc-crown svg {
+  width: 28mm;
+  height: auto;
+}
+
+.toc-page .toc-entry {
   display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 14px;
-}
-
-.toc-item .toc-rubric {
-  font-family: var(--font-subheading);
-  font-size: 10pt;
-  font-weight: 600;
+  justify-content: space-between;
+  align-items: baseline;
+  padding: 1.8mm 0;
+  border-bottom: 1px dotted rgba(18, 40, 73, 0.2);
+  font-family: var(--font-body);
+  font-size: 10.5pt;
+  line-height: 1.45;
   color: var(--navy-deep);
 }
 
-.toc-item .toc-desc {
-  font-family: var(--font-body);
-  font-size: 8pt;
-  color: #666;
-  margin-top: 1px;
+.toc-page .toc-entry:last-child {
+  border-bottom: none;
 }
 
-.toc-item .toc-page-num {
+.toc-page .toc-entry strong {
   font-family: var(--font-heading);
-  font-size: 20pt;
-  font-weight: 700;
-  color: var(--gold-classic);
-  min-width: 30px;
-  text-align: right;
+  font-size: 8.5pt;
+  letter-spacing: 0.2px;
 }
 
-/* ── EDITORIAL (Paginile 3-4) ── */
+.toc-page .toc-num {
+  font-weight: 600;
+  color: var(--gold-classic);
+  font-family: var(--font-heading);
+  font-size: 12pt;
+  flex-shrink: 0;
+  min-width: 8mm;
+  text-align: right;
+  padding-left: 3mm;
+}
+
+/* ── EDITORIAL (Pagina 3) — fidel modelului PDF ── */
 .editorial-page {
   background: var(--white-pure);
 }
 
-.editorial-signature {
-  margin-top: 5mm;
-  text-align: right;
+.editorial-page .page-inner {
+  display: flex;
+  flex-direction: column;
+}
+
+.editorial-title {
   font-family: var(--font-heading);
+  font-size: 20pt;
+  font-variant: small-caps;
+  color: var(--navy-deep);
+  margin: 6mm 0 4mm;
+  letter-spacing: 0.5px;
+  font-weight: 700;
+}
+
+.editorial-content {
+  display: grid;
+  grid-template-columns: 90mm 1fr;
+  gap: 0 5mm;
+}
+
+.editorial-photo-col {
+  align-self: start;
+  text-align: center;
+}
+
+.director-photo {
+  width: 73mm;
+  height: 110mm;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 3.5mm solid var(--gold-classic);
+}
+
+.editorial-text-col {
+  font-family: var(--font-body);
+  font-size: 10.5pt;
+  line-height: 1.6;
+  text-align: justify;
+  color: var(--near-black);
+}
+
+.editorial-text-col p {
+  margin-bottom: 3mm;
+}
+
+.editorial-signature {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 4mm;
+  margin-top: 6mm;
+}
+
+.editorial-signature .signature-img {
+  width: 40mm;
+  height: auto;
+  flex-shrink: 0;
+}
+
+.editorial-signature .sig-info {
+  text-align: left;
+}
+
+.editorial-signature .sig-closing {
+  font-family: var(--font-body);
+  font-size: 10.5pt;
+  color: var(--near-black);
+}
+
+.editorial-signature .sig-name {
+  font-family: var(--font-body);
+  font-weight: 700;
+  font-size: 10.5pt;
+  color: var(--near-black);
+}
+
+.editorial-signature .sig-title {
+  font-family: var(--font-body);
+  font-size: 10.5pt;
+  font-weight: 700;
   font-style: italic;
-  color: var(--navy-medium);
-  font-size: 11pt;
+  color: var(--near-black);
+}
+
+.editorial-page .pull-quote {
+  margin-top: 20mm;
+}
+
+/* ── CASETĂ CITAT (reutilizabilă) ── */
+.quote-box {
+  display: flex;
+  align-items: flex-start;
+  gap: 3mm;
+  background: var(--cream-quote);
+  border-left: 3.5px solid var(--gold-classic);
+  padding: 3.5mm 4mm;
+  margin-top: 11mm;
+}
+
+.quote-box .quote-mark {
+  font-size: 42pt;
+  line-height: 0.7;
+  color: var(--gold-classic);
+  font-family: Georgia, serif;
+  flex-shrink: 0;
+}
+
+.quote-box .quote-text {
+  font-family: var(--font-body);
+  font-size: 9.5pt;
+  font-style: italic;
+  font-weight: 700;
+  line-height: 1.45;
+  color: var(--navy-deep);
 }
 
 /* ── REPORTAJ (Paginile 5-6) ── */
