@@ -97,6 +97,16 @@ decât celălalt, creează aspect dezechilibrat. Ajustează dimensiunea foto sau
 spațierea textului (line-height, padding) pentru a obține alinierea, nu
 trunchia conținutul.
 
+### Spațiere consistentă între blocuri
+Toate blocurile de conținut de pe o pagină (paragrafe, casete, citate,
+secțiuni) trebuie să aibă spații verticale aproximativ EGALE între ele — nu
+variabile de la un bloc la altul. Stabilește o valoare standard (ex.
+`margin-top: 4mm`, consistent cu grila de bază a paginii) și aplic-o uniform,
+în loc să ajustezi ad-hoc spațiul de la caz la caz. Excepție: spațiere
+intenționat mai mare înainte/după un element dominant, pentru a-l separa
+vizual — dar și acolo, valoarea trebuie să fie consistentă pe toate paginile
+care au acest tip de element.
+
 ---
 
 ## 4. Umplerea paginii — eliminarea spațiului gol (REGULA CRITICĂ)
