@@ -1,4 +1,7 @@
-# Skill: pagina-noua
+---
+name: pagina-noua
+description: Generare pagină nouă în revista CAROLine dintr-un docx sursă din Conținuturi/. Folosește acest skill când trebuie adăugată o pagină nouă în revista/index.html pe baza „Distribuție pagini.docx".
+---
 
 Generare pagină nouă în revistă dintr-un docx sursă din `Conținuturi/`.
 
