@@ -674,7 +674,6 @@ p,
 .editorial-page .page-inner {
   display: flex;
   flex-direction: column;
-  height: 100%;
 }
 
 .editorial-title {
@@ -689,20 +688,21 @@ p,
 
 .editorial-content {
   display: grid;
-  grid-template-columns: 52mm 1fr;
+  grid-template-columns: 90mm 1fr;
   gap: 0 5mm;
 }
 
 .editorial-photo-col {
   align-self: start;
+  text-align: center;
 }
 
 .director-photo {
-  width: 52mm;
-  height: auto;
+  width: 73mm;
+  height: 110mm;
   border-radius: 50%;
-  object-fit: contain;
-  border: 3px solid var(--gold-classic);
+  object-fit: cover;
+  border: 3.5mm solid var(--gold-classic);
 }
 
 .editorial-text-col {
@@ -718,15 +718,21 @@ p,
 }
 
 .editorial-signature {
-  text-align: center;
-  margin-top: 4mm;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 4mm;
+  margin-top: 6mm;
 }
 
 .editorial-signature .signature-img {
-  width: 22mm;
+  width: 40mm;
   height: auto;
-  display: inline-block;
-  margin-bottom: 1mm;
+  flex-shrink: 0;
+}
+
+.editorial-signature .sig-info {
+  text-align: left;
 }
 
 .editorial-signature .sig-closing {
@@ -748,6 +754,10 @@ p,
   font-weight: 700;
   font-style: italic;
   color: var(--near-black);
+}
+
+.editorial-page .pull-quote {
+  margin-top: 20mm;
 }
 
 /* ── CASETĂ CITAT (reutilizabilă) ── */
