@@ -701,7 +701,7 @@ p,
   width: 52mm;
   height: auto;
   border-radius: 50%;
-  object-fit: cover;
+  object-fit: contain;
   border: 3px solid var(--gold-classic);
 }
 
